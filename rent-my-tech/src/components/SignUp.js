@@ -10,9 +10,7 @@ export default function SignUp(props) {
   return (
     
     <PageContainer>
-    <Nav><h3>Rent My<span> Tech </span> 
-    
-    </h3>
+    <Nav><h3>Rent My <span>Tech </span></h3>
     <Link to='/'>Home</Link></Nav>
 <FormContainer>
 <LeftContainer>
@@ -21,7 +19,8 @@ export default function SignUp(props) {
 <RightContainer>
 <h2> Create an account. </h2>
 <div className='redbar'></div>
-<p>Already have an account? <Link className='account' to='/login'>Login</Link></p>
+ <Link className='account' to='/login'>
+     Already have an account? <span className='login'>Login</span></Link>
 
 <form>
 
@@ -124,6 +123,23 @@ margin-bottom: -0.2rem;
     border-radius: 2rem;
 }
 
+a {
+  font-size:1.4rem;
+  margin-right:2rem;
+  text-decoration:none;
+  font-weight: bold;
+  margin-top: 1rem;
+  margin-left:1rem;
+  color: #7b8183;
+  font-size: 0.9rem;
+margin-bottom:3rem;
+  
+}
+
+.login {
+    color: #FF4F5A;
+}
+
 label{
   color: #1A2E35;
   font-size:1.1rem;
@@ -175,8 +191,8 @@ button {
   padding: 0.7rem;
   border-radius:2rem;
   align-self: center;
-  padding-right:4rem;
-  padding-left: 4rem;
+  padding-right:6rem;
+  padding-left: 6rem;
   text-transform: uppercase;
   letter-spacing:0.3rem;
   }
@@ -185,12 +201,7 @@ button {
       color: #FF4F5A;
   }
 
-p {
-    color: #7b8183;
-    font-size: 0.9rem;
-    margin-bottom:3rem;
-    
-}
+
 
 .account{
     font-size: 1rem;
@@ -198,16 +209,7 @@ p {
     
 }
 
-a {
-  font-size:1.4rem;
-  margin-right:2rem;
-  text-decoration:none;
-  color: #1A2E35;
-  font-weight: bold;
-  margin-top: 1rem;
-  margin-left:1rem;
-  
-}
+
 
 span {
   color: #FF4F5A;
@@ -230,12 +232,15 @@ span {
         margin-bottom: 1rem;
         background:#385A64;
         color: #f3e8e8;
-        padding: 0.3rem;
+        padding: 0.5rem;
+        padding-right: 1rem;
         font-size: 1.2rem;
         border: none;
         border-radius: 1rem;
+        outline: none;
         
     }
+    
 `
 
 //nav at top------------------------------------------------------

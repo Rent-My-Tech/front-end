@@ -18,6 +18,7 @@ export default function Login(props) {
   </LeftContainer>
   <RightContainer>
 <h2>Hello! <br /> Welcome back. </h2>
+<div className='redbar'></div>
 
     <form>
       <label>Username</label> <br />
@@ -92,6 +93,15 @@ text-align:center;
 font-size: 3.2rem;
 }
 
+.redbar {
+    width: 40%;
+    margin-top: -2.7rem;
+    height:1%;
+    background:#FF4F5A;
+    border-radius: 2rem;
+    margin-bottom: 2.5rem;
+}
+
 label{
   color: #1A2E35;
   font-size:1.2rem;
@@ -131,16 +141,16 @@ button {
   padding: 0.7rem;
   border-radius:2rem;
   align-self: center;
-  padding-right:4rem;
-  padding-left: 4rem;
+  padding-right:6rem;
+  padding-left: 6rem;
   text-transform: uppercase;
   letter-spacing:0.3rem;
   
 }
 
 a {
-  font-size:1.4rem;
-  margin-right:2rem;
+  font-size:1.2rem;
+  /* margin-right:1.6rem; */
   text-decoration:none;
   color: #1A2E35;
   font-weight: bold;
@@ -167,14 +177,15 @@ span {
 }
 
 .select select {
-        margin-bottom: 1rem;
+  margin-bottom: 1rem;
         background:#385A64;
         color: #f3e8e8;
-        padding: 0.3rem;
+        padding: 0.5rem;
+        padding-right: 1rem;
         font-size: 1.2rem;
         border: none;
         border-radius: 1rem;
-        outline:none;
+        outline: none;
         
     }
 `
