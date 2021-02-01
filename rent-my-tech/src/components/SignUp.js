@@ -10,7 +10,9 @@ export default function SignUp(props) {
   return (
     
     <PageContainer>
-    <Nav><h3>Rent My<span> Tech</span></h3>
+    <Nav><h3>Rent My<span> Tech </span> 
+    
+    </h3>
     <Link to='/'>Home</Link></Nav>
 <FormContainer>
 <LeftContainer>
@@ -18,6 +20,7 @@ export default function SignUp(props) {
 </LeftContainer>
 <RightContainer>
 <h2> Create an account. </h2>
+<div className='redbar'></div>
 <p>Already have an account? <Link className='account' to='/login'>Login</Link></p>
 
 <form>
@@ -114,14 +117,17 @@ font-size: 3.2rem;
 margin-bottom: -0.2rem;
 }
 
+.redbar {
+    width: 40%;
+    height:1%;
+    background:#FF4F5A;
+    border-radius: 2rem;
+}
+
 label{
   color: #1A2E35;
   font-size:1.1rem;
- 
-  
-
-  
-}
+ }
 
 input[type="text"]{
   width:30rem;
@@ -165,12 +171,14 @@ button {
   background: #385A64;
   color: #f3e8e8;
   border: none;
-  font-size: 2rem;
+  font-size: 1.8rem;
   padding: 0.7rem;
   border-radius:2rem;
   align-self: center;
   padding-right:4rem;
   padding-left: 4rem;
+  text-transform: uppercase;
+  letter-spacing:0.3rem;
   }
 
   button:hover {
@@ -186,7 +194,7 @@ p {
 
 .account{
     font-size: 1rem;
-    color: #FF4F5A;
+    color: #1A2E35;
     
 }
 
@@ -239,7 +247,7 @@ box-sizing:border-box;
 background: #385A64;
 color: #f3e8e8;
 width:100vw;
-height: 6%;
+height: 10%;
 margin-top:-2.7%; 
 display:flex;
 justify-content:space-between;
@@ -253,6 +261,8 @@ h3 {
 span {
  color: #df5f68;
 }
+
+
 a {
   font-size:1.4rem;
   margin-right:2rem;

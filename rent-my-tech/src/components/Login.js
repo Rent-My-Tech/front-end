@@ -127,13 +127,14 @@ button {
   background: #385A64;
   color: #f3e8e8;
   border: none;
-  font-size: 2rem;
+  font-size: 1.8rem;
   padding: 0.7rem;
   border-radius:2rem;
   align-self: center;
-  padding-right: 4rem;
+  padding-right:4rem;
   padding-left: 4rem;
-  outline:none;
+  text-transform: uppercase;
+  letter-spacing:0.3rem;
   
 }
 
@@ -185,7 +186,7 @@ box-sizing:border-box;
 background: #385A64;
 color: #f3e8e8;
 width:100vw;
-height: 6%;
+height: 10%;
 margin-top:-2.7%; 
 display:flex;
 justify-content:space-between;
