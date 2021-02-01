@@ -36,11 +36,13 @@ placeholder='Password here...'
 // value={}
 >
 </input><br />
-<select>
-    <option>-select-</option>
-    <option>renter</option>
-    <option>owner</option>
-  </select>
+{/* <a className='forgot' href='#'>forgot password?</a><br /> */}
+<div className='select'><select
+name='dropdown'>
+    <option name=''>-select-</option>
+    <option name='renter'>renter</option>
+    <option name='owner'>owner</option>
+  </select></div>
 <div className= 'btn'><button>Login</button>
 <Link to='/signup'>New user? <span>Signup</span></Link></div> 
 
@@ -145,6 +147,30 @@ a {
 span {
   color: #FF4F5A;
 }
+
+.forgot {
+    text-align:right;
+    font-size:1rem;
+}
+
+.select{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    
+}
+
+.select select {
+        margin-bottom: 1rem;
+        background:#385A64;
+        color: #f3e8e8;
+        padding: 0.3rem;
+        font-size: 1.2rem;
+        border: none;
+        border-radius: 1rem;
+        
+    }
 `
 
 const Nav = styled.div`
