@@ -24,7 +24,6 @@ export default function Login(props) {
 <input
 type='text'
 name='userName'
-placeholder='Username here...'
 // value={}
 >
 </input><br />
@@ -32,14 +31,13 @@ placeholder='Username here...'
 <input
 type='text'
 name='password'
-placeholder='Password here...'
 // value={}
 >
 </input><br />
 {/* <a className='forgot' href='#'>forgot password?</a><br /> */}
 <div className='select'><select
 name='dropdown'>
-    <option name=''>-select-</option>
+    <option name=''>select account type</option>
     <option name='renter'>renter</option>
     <option name='owner'>owner</option>
   </select></div>
@@ -108,8 +106,12 @@ input[type="text"]{
   margin-bottom:1rem;
   font-size: 1.3rem;
   border-radius:3rem;
-  border: 0.3rem solid #385A64;
+  outline:none;
+  border: 0.1rem solid #1A2E35;
   box-sizing:border-box;
+  box-shadow: none;
+  background: #1A2E35;
+  color: #f3e8e8;
 }
 
 .btn {
@@ -118,6 +120,7 @@ justify-content:center;
 align-self:center;
 flex-direction:column;
 text-align:center;
+
 }
 
 button {
@@ -128,8 +131,9 @@ button {
   padding: 0.7rem;
   border-radius:2rem;
   align-self: center;
-  padding-right:2rem;
-  padding-left: 2rem;
+  padding-right: 4rem;
+  padding-left: 4rem;
+  outline:none;
   
 }
 
@@ -169,6 +173,7 @@ span {
         font-size: 1.2rem;
         border: none;
         border-radius: 1rem;
+        outline:none;
         
     }
 `
