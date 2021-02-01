@@ -58,7 +58,7 @@ span {
 
 .links {
     background: #df5f68;
-    height: 100%;
+    height: 6.4rem;
     display:flex;
     justify-content:center;
     align-items:center;
