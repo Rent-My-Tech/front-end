@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom';
+import Nav from './Nav'
 
 
 
@@ -10,8 +11,7 @@ export default function SignUp(props) {
   return (
     
     <PageContainer>
-    <Nav><h3>Rent My <span>Tech </span></h3>
-    <Link to='/'>Home</Link></Nav>
+    <Nav />
 <FormContainer>
 <LeftContainer>
  
@@ -184,7 +184,7 @@ text-align:center;
 }
 
 button {
-  background: #385A64;
+    background: #385A64;
   color: #f3e8e8;
   border: none;
   font-size: 1.8rem;
@@ -194,11 +194,14 @@ button {
   padding-right:6rem;
   padding-left: 6rem;
   text-transform: uppercase;
-  letter-spacing:0.3rem;
+  transition: background-color 0.5s ease;
   }
 
   button:hover {
-      color: #FF4F5A;
+    background: #FF4F5A;
+      color:#1A2E35;
+      font-weight:bold;
+      
   }
 
 
@@ -230,10 +233,11 @@ span {
 
 .select select {
         margin-bottom: 1rem;
-        background:#385A64;
+        background: #1A2E35;
         color: #f3e8e8;
         padding: 0.5rem;
-        padding-right: 1rem;
+        padding-right: 8rem;
+        text-align: center;
         font-size: 1.2rem;
         border: none;
         border-radius: 1rem;
@@ -241,41 +245,4 @@ span {
         
     }
     
-`
-
-//nav at top------------------------------------------------------
-const Nav = styled.div`
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-font-family: 'Poppins', sans-serif;
-
-box-sizing:border-box;
-background: #385A64;
-color: #f3e8e8;
-width:100vw;
-height: 10%;
-margin-top:-2.7%; 
-display:flex;
-justify-content:space-between;
-align-items:center;
-
-h3 {
-  font-size:1.6rem;
-  margin-left:2rem;
-  letter-spacing: 0.2rem;
-}
-span {
- color: #df5f68;
-}
-
-
-a {
-  font-size:1.4rem;
-  margin-right:2rem;
-  text-decoration:none;
-  color: #f3e8e8;
-  letter-spacing: 0.2rem;
-}
-a:hover {
-  color:#FF4F5A;
-} 
 `
