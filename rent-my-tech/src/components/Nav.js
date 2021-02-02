@@ -40,7 +40,7 @@ h3 {
     @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
     font-family: 'Poppins', sans-serif;
   font-size:1.9rem;
-  margin-left: -64rem;
+  margin-left: -30rem;
   letter-spacing: 0.2rem;
 }
 span {
@@ -59,6 +59,7 @@ span {
 .links {
     background: #df5f68;
     height: 100%;
+    width: 60%;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -80,7 +81,7 @@ a {
   color: #f3e8e8;
   letter-spacing: 0.2rem;
   font-weight:normal;
-  padding-left: 5rem;
+  padding: 7rem;
 }
 a:hover {
   color:#df5f68;
