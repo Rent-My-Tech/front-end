@@ -13,8 +13,8 @@ export default function Dashboard() {
         <div className='red-box'></div>
          <h3>Rent My <span>Tech </span></h3> 
          <div className='links'>
-            <h2>Home</h2>
-            <h2>Logout</h2>
+            <Link to='/'>Home</Link> 
+            <Link to='/'>Logout</Link> 
          </div>
         </Navigation>
         <div className="welcomeText">                         

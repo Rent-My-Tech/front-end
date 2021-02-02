@@ -1,13 +1,43 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import Nav from './Nav'
-
-
-
+import axios from 'axios';
 
 
 export default function SignUp(props) {
+
+
+const history = useHistory();
+
+//initialState
+
+const initialState = {
+  firstName: "",
+  lastName: "",
+  email: "",
+  password: "",
+  userType: ""
+}
+
+const [newUser, setNewUser] = useState(initialState);
+
+//onChange handler
+const handleChange = (e) => {
+  setNewUser({...newUser, [e.target.name]: e.target.value})
+};
+
+//onSubmit handler
+const createAccount = (e) => {
+  e.preventDefault();
+  axios
+      .post("https://reqres.in/api/users", newUser)
+      .then(res => {
+        console.log(res)
+        // localStorage.setItem("token", res.data.payload); NEED TO CONFIGURE THIS ONCE SERVER IS SETUP
+      })
+}
+
   return (
     
     <PageContainer>
@@ -22,35 +52,39 @@ export default function SignUp(props) {
  <Link className='account' to='/login'>
      Already have an account? <span className='login'>Login</span></Link>
 
-<form>
+<form onSubmit={createAccount}>
 
 
 <label>First Name</label> <br />
 <input
 type='text'
 name='firstName'
-//value={}
+onChange={handleChange}
+value={newUser.firstName}
 />< br/>
 
 <label>Last Name</label> <br />
 <input
 type='text'
-name='LastName'
-//value={}
+name='lastName'
+onChange={handleChange}
+value={newUser.lastName}
 /><br />
 
 <label>Email</label> <br />
 <input
 type='email'
 name='email'
-//value={}
+onChange={handleChange}
+value={newUser.email}
 /><br />
 
 <label>Password</label> <br />
 <input
-type='text'
+type='password'
 name='password'
-//value={}
+onChange={handleChange}
+value={newUser.password}
 />
 
 <div className='select'><select
@@ -160,6 +194,20 @@ input[type="text"]{
 }
 
 input[type="email"]{
+  width:30rem;
+  padding: 0.6rem;
+  margin-bottom:1rem;
+  font-size: 1.3rem;
+  border-radius:3rem;
+  outline:none;
+  border: 0.1rem solid #1A2E35;
+  box-sizing:border-box;
+  box-shadow: none;
+  background: #1A2E35;
+  color: #f3e8e8;
+}
+
+input[type="password"]{
   width:30rem;
   padding: 0.6rem;
   margin-bottom:1rem;
