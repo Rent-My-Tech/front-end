@@ -17,7 +17,7 @@ export default function Dashboard() {
             <h2>Logout</h2>
          </div>
         </Navigation>
-        <div className="welcomeText">
+        <div className="welcomeText">                         
             <h1>Welcome, User!</h1>
         </div>
     </>   
