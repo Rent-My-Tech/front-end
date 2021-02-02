@@ -71,6 +71,14 @@ onChange={handleChange}
 value={props.newUser.lastName}
 /><br />
 
+<label>Username</label> <br />
+<input
+type='text'
+name='username'
+onChange={handleChange}
+value={props.newUser.userName}
+/><br />
+
 <label>Email</label> <br />
 <input
 type='email'
@@ -93,7 +101,7 @@ name='dropdown'>
     <option name='renter'>Renter</option>
     <option name='owner'>Owner</option>
   </select></div>
-  <div className= 'btn'><button>Login</button>
+  <div className= 'btn'><button>Sign Up</button>
 </div> 
 
 </form>
