@@ -10,17 +10,17 @@ export default function Login(props) {
   const history = useHistory();
 
   //initialState
-  const initialState = {
-    username:"",
-    password: "",
-    userType: ""
-  };
+  // const initialState = {
+  //   username:"",
+  //   password: "",
+  //   userType: ""
+  // };
 
-  const [user, setUser] = useState(initialState);
+  // const [user, setUser] = useState(initialState);
 
    //onChange handler
    const handleChange = (e) => {
-    setUser({...user, [e.target.name]: e.target.value})
+    props.setUser({...props.user, [e.target.name]: e.target.value})
   };
 
   //onSelect handler??
@@ -31,7 +31,7 @@ export default function Login(props) {
   const login = (e) => {
     e.preventDefault();
     axios
-        .post("https://reqres.in/api/users", user)
+        .post("https://reqres.in/api/users", props.user)
         .then(res => {
           console.log(res.data)
           localStorage.setItem("token", res.data.payload);
@@ -61,7 +61,7 @@ export default function Login(props) {
 type='text'
 name='username'
 onChange={handleChange}
-value={user.username}
+value={props.user.username}
 >
 </input><br />
 <label>Password</label><br />
@@ -69,7 +69,7 @@ value={user.username}
 type='password'
 name='password'
 onChange={handleChange}
-value={user.password}
+value={props.user.password}
 >
 </input><br />
 {/* <a className='forgot' href='#'>forgot password?</a><br /> */}

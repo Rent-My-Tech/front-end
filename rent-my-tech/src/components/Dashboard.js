@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components'
 
 
-export default function Dashboard() {
-
+export default function Dashboard(props) {
+    console.log(props.user.username)
 
 
     return (
@@ -18,7 +18,7 @@ export default function Dashboard() {
          </div>
         </Navigation>
         <div className="welcomeText">                         
-            <h1>Welcome, User!</h1>
+            <h1>Welcome, {props.user.username}</h1>
         </div>
     </>   
         

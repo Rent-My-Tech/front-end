@@ -12,26 +12,26 @@ const history = useHistory();
 
 //initialState
 
-const initialState = {
-  firstName: "",
-  lastName: "",
-  email: "",
-  password: "",
-  userType: ""
-}
+// const initialState = {
+//   firstName: "",
+//   lastName: "",
+//   email: "",
+//   password: "",
+//   userType: ""
+// }
 
-const [newUser, setNewUser] = useState(initialState);
+// const [newUser, setNewUser] = useState(initialState);
 
 //onChange handler
 const handleChange = (e) => {
-  setNewUser({...newUser, [e.target.name]: e.target.value})
+  props.setNewUser({...props.newUser, [e.target.name]: e.target.value})
 };
 
 //onSubmit handler
 const createAccount = (e) => {
   e.preventDefault();
   axios
-      .post("https://reqres.in/api/users", newUser)
+      .post("https://reqres.in/api/users", props.newUser)
       .then(res => {
         console.log(res)
         // localStorage.setItem("token", res.data.payload); NEED TO CONFIGURE THIS ONCE SERVER IS SETUP
@@ -60,7 +60,7 @@ const createAccount = (e) => {
 type='text'
 name='firstName'
 onChange={handleChange}
-value={newUser.firstName}
+value={props.newUser.firstName}
 />< br/>
 
 <label>Last Name</label> <br />
@@ -68,7 +68,7 @@ value={newUser.firstName}
 type='text'
 name='lastName'
 onChange={handleChange}
-value={newUser.lastName}
+value={props.newUser.lastName}
 /><br />
 
 <label>Email</label> <br />
@@ -76,7 +76,7 @@ value={newUser.lastName}
 type='email'
 name='email'
 onChange={handleChange}
-value={newUser.email}
+value={props.newUser.email}
 /><br />
 
 <label>Password</label> <br />
@@ -84,7 +84,7 @@ value={newUser.email}
 type='password'
 name='password'
 onChange={handleChange}
-value={newUser.password}
+value={props.newUser.password}
 />
 
 <div className='select'><select
