@@ -1,13 +1,46 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Link } from 'react-router-dom';
-import Nav from './Nav'
-
-
-
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import { Link, useHistory } from 'react-router-dom';
+import axios from 'axios';
+import Nav from './Nav';
 
 
 export default function Login(props) {
+
+  const history = useHistory();
+
+  //initialState
+
+  const initialState = {
+    username:"",
+    password: "",
+    type: ""
+  };
+
+  const [user, setUser] = useState(initialState);
+
+  //onChange handler
+  const handleChange = (e) => {
+    setUser({...user, [e.target.name]: e.target.value})
+  };
+
+
+  //onSubmit handler
+  const login = (e) => {
+    e.preventDefault();
+    axios
+        .post("http//:TESTapi:5000/api/login", user)
+        .then(res => {
+          localStorage.setItem("token", res.data.payload);
+          history.push('/dashboard')
+        })
+        .catch(err => {
+          console.log(err)
+        })
+  }
+
+  //Do I need a handleSelect??? 
+
   return (
     
     <PageContainer>
@@ -20,27 +53,29 @@ export default function Login(props) {
 <h2>Hello! <br /> Welcome back. </h2>
 <div className='redbar'></div>
 
-    <form>
+    <form onSubmit={login}>
       <label>Username</label> <br />
 <input
 type='text'
-name='userName'
-// value={}
+name='username'
+onChange={handleChange}
+value={user.username}
 >
 </input><br />
 <label>Password</label><br />
 <input
-type='text'
+type='password'
 name='password'
-// value={}
+onChange={handleChange}
+value={user.password}
 >
 </input><br />
 {/* <a className='forgot' href='#'>forgot password?</a><br /> */}
 <div className='select'><select
 name='dropdown'>
     <option name=''>select account type</option>
-    <option name='renter'>renter</option>
-    <option name='owner'>owner</option>
+    <option name='renter' value={user.type}>renter</option>
+    <option name='owner' value={user.type}>owner</option>
   </select></div>
 <div className= 'btn'><button>Login</button>
 <Link to='/signup'>New user? <span>Signup</span></Link></div> 
@@ -111,6 +146,20 @@ label{
 }
 
 input[type="text"]{
+  width:30rem;
+  padding: 0.6rem;
+  margin-bottom:1rem;
+  font-size: 1.3rem;
+  border-radius:3rem;
+  outline:none;
+  border: 0.1rem solid #1A2E35;
+  box-sizing:border-box;
+  box-shadow: none;
+  background: #1A2E35;
+  color: #f3e8e8;
+}
+//had to add this to make a password type input
+input[type="password"]{
   width:30rem;
   padding: 0.6rem;
   margin-bottom:1rem;
