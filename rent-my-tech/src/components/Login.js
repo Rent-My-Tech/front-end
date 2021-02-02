@@ -10,27 +10,30 @@ export default function Login(props) {
   const history = useHistory();
 
   //initialState
-
   const initialState = {
     username:"",
     password: "",
-    type: ""
+    userType: ""
   };
 
   const [user, setUser] = useState(initialState);
 
-  //onChange handler
-  const handleChange = (e) => {
+   //onChange handler
+   const handleChange = (e) => {
     setUser({...user, [e.target.name]: e.target.value})
   };
+
+  //onSelect handler??
+  //need to figure out how to submit user type data. 
 
 
   //onSubmit handler
   const login = (e) => {
     e.preventDefault();
     axios
-        .post("http//:TESTapi:5000/api/login", user)
+        .post("https://reqres.in/api/users", user)
         .then(res => {
+          console.log(res.data)
           localStorage.setItem("token", res.data.payload);
           history.push('/dashboard')
         })
@@ -39,7 +42,6 @@ export default function Login(props) {
         })
   }
 
-  //Do I need a handleSelect??? 
 
   return (
     
@@ -74,8 +76,8 @@ value={user.password}
 <div className='select'><select
 name='dropdown'>
     <option name=''>select account type</option>
-    <option name='renter' value={user.type}>renter</option>
-    <option name='owner' value={user.type}>owner</option>
+    <option name='userType' onChange={handleChange} value="renter">renter</option>
+    <option name='userType' onChange={handleChange} value="owner">owner</option>
   </select></div>
 <div className= 'btn'><button>Login</button>
 <Link to='/signup'>New user? <span>Signup</span></Link></div> 

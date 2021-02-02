@@ -3,23 +3,24 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components'
 
 
-
-
-
-export default function Home(props) {
+export default function Dashboard() {
 
 
 
     return (
+    <>
         <Navigation>
         <div className='red-box'></div>
          <h3>Rent My <span>Tech </span></h3> 
          <div className='links'>
-    <Link to='/'>Home</Link> 
-    <Link to='/signup'>Sign Up</Link> 
-    <Link to='/login'>Login</Link>
-    </div>
-    </Navigation>
+            <h2>Home</h2>
+            <h2>Logout</h2>
+         </div>
+        </Navigation>
+        <div className="welcomeText">
+            <h1>Welcome, User!</h1>
+        </div>
+    </>   
         
     )
 }
@@ -64,7 +65,6 @@ span {
     border-radius: 9rem 0 0 4rem;
     
 }
-
 .links:hover {
     background: #1A2E35;
     
@@ -84,6 +84,10 @@ a {
 a:hover {
   color:#df5f68;
 } 
+
+.welcomeText {
+
+}
 
 
 
