@@ -67,6 +67,7 @@ span {
     align-items:center;
     border-radius: 9rem 0 0 4rem;
     
+    
 }
 
 .links:hover {
@@ -89,6 +90,53 @@ a:hover {
   color:#df5f68;
 } 
 
+//Laptop-----------------
+@media (min-width: 1300px) {
+width: 100vw;
+.links {
+  width: 75%;
+  
+}
 
+a {
+  padding: 4rem;
+  font-size: 1.2rem;
+  
+  
+}
+.red-box {
+margin-right: 15rem;
+height: 4.8rem;
+}
+
+}
+
+//Desktop---------------------
+@media (min-width: 1900px) {
+ 
+
+.links {
+  width: 80%;
+}
+
+a{
+  padding: 5rem;
+  font-size: 1.8rem;
+}
+
+.red-box {
+  height: 6.3rem;
+}
+
+}
+//4k-------------------------------
+@media (min-width: 2400px) {
+ 
+ 
+ .red-box {
+   height: 8.3rem;
+ }
+ 
+ }
 
 `

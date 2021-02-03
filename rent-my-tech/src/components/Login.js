@@ -94,10 +94,15 @@ align-items: center;
 flex-direction:column;`
 
 const FormContainer = styled.div `
-width: 70%;
+width: 90%;
 height:80%;
 display:flex;
-flex-direction:row;`
+flex-direction:row;
+
+@media screen and (min-width: 780px){
+  width: 90%;
+}
+`
 
 const LeftContainer = styled.div`
 background: url("https://i.ibb.co/dLD2hdM/Login.jpg");
@@ -107,7 +112,6 @@ background-position: center center;
 flex:1;`
 
 const RightContainer = styled.div`
-/* border: 1px solid black; */
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 font-family: 'Poppins', sans-serif;
 flex:1;
@@ -198,7 +202,7 @@ button:hover {
 
 a {
   font-size:1.2rem;
-  /* margin-right:1.6rem; */
+   margin-right:1.6rem;
   text-decoration:none;
   color: #1A2E35;
   font-weight: bold;
