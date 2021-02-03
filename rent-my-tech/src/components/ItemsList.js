@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components'
 
-const ItemsList = () => {
-
+const ItemsList = (props) => {
+console.log(props.newItem)
 
 
     return(
@@ -10,15 +10,17 @@ const ItemsList = () => {
             <ItemBox>
             <div className="mainBox"> 
                 <div className="itemsList">
-                    <h1>ITEMS FOR RENT</h1>  
+                    <h1>ITEMS FOR RENT</h1>
+                    {/* {props.newItem.map((item) => (  
                     <div className="itemBox">
-                        <p><b>Item Name:</b><br/>Camera</p>
-                        <p><b>Price:</b><br/>$20.00</p>
-                        <p><b>Description:</b><br/>Nikon DSLR!</p>
+                        <p><b>Item Name:</b><br/>{item.itemName}</p>
+                        <p><b>Price:</b><br/>{item.price}</p>
+                        <p><b>Description:</b><br/>{item.description}</p>
                         <button>Delete</button>
                     </div>
+                    ))} */}
                 </div>
-            </div>    
+            </div>
             </ItemBox>
         </>
     )

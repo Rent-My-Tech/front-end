@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import ItemList from './ItemsList';
+import React, { useReducer, useState } from 'react';
+import ItemsList from './ItemsList';
+import { itemsList, reducer } from '../reducers/reducer';
 
 const RentForm = () => {
 
@@ -10,29 +11,23 @@ const RentForm = () => {
         description:""
     }
 
-    const [newItem, setNewItem] = useState(initialState);
+        const [newItem, setNewItem] = useState(initialState);
+        const [state, dispatch] = useReducer(reducer, itemsList);
 
-    const handleChange = (e) => {
-        setNewItem({...newItem, [e.target.name]: e.target.value})
+        console.log(state) // contains itemsList
+        console.log(newItem)
 
-    }
-
-    const addItem = (e) => {
-        e.preventDefault();
-
-
-
-    }
-
-
-
+        const handleChange = (e) => {
+            setNewItem({[e.target.value]:e.target.name})
+        }
 
     return(
         <>
         <h1>Enter the items you want to list below:</h1>
         
-        <form>
-           
+            <form onClick={() =>
+                dispatch({type: 'ADD_ITEM', payload:newItem})
+            }>
             <input 
             placeholder="Item Name"
             type='text'
@@ -61,7 +56,7 @@ const RentForm = () => {
 
         </form>
 
-        <ItemList />
+        <ItemsList newItem={newItem} />
 
         </>
     )
