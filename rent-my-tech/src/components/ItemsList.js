@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const ItemsList = (props) => {
 console.log(props.newItem)
@@ -10,15 +10,17 @@ console.log(props.newItem)
             <ItemBox>
             <div className="mainBox"> 
                 <div className="itemsList">
-                    <h1>ITEMS FOR RENT</h1>
-                    {/* {props.newItem.map((item) => (  
+                    <div className="itemBoxTitle">
+                        <h1>ITEMS FOR RENT</h1> 
+                    </div>
+                        {props.itemsList.map((item, index) => (  
                     <div className="itemBox">
-                        <p><b>Item Name:</b><br/>{item.itemName}</p>
-                        <p><b>Price:</b><br/>{item.price}</p>
-                        <p><b>Description:</b><br/>{item.description}</p>
+                        <p key={index}><b>Item Name:</b><br/>{item.itemName}</p>
+                        <p key={index}><b>Price:</b><br/>{item.price}</p>
+                        <p key={index}><b>Description:</b><br/>{item.description}</p>
                         <button>Delete</button>
                     </div>
-                    ))} */}
+                    ))}
                 </div>
             </div>
             </ItemBox>
@@ -45,6 +47,10 @@ align-items:center;
     border-radius:80px;
     margin-top:1.0rem;
     margin-bottom:1.0rem;
+}
+
+.itemBoxTitle{
+
 }
 
 .itemBox{

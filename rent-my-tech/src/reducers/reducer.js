@@ -4,13 +4,13 @@ export const itemsList = [
         itemName:"Nikon DSLR",
         price: "20.00",
         description:"High Res Photos",
-        // active:false,
+        active:false,
     },
     {
         itemName:"Nintendo Switch",
         price: "25.00",
         description:"Includes Animal Crossing",
-        // active:false,
+        active:false,
     }
 
 ]
@@ -22,9 +22,10 @@ export const reducer = (state, action) => {
                 ...state,
                 itemName: action.payload,
                 price: action.payload,
-                description: action.payload
+                description: action.payload,
+                active:true
             }
             default:
                 return state
     }
-}
+};
