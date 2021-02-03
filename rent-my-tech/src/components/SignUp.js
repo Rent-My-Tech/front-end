@@ -119,10 +119,14 @@ flex-direction:column;`
 
 //box holding image and form----------------------------------
 const FormContainer = styled.div `
-width: 70%;
+width: 90%;
 height:80%;
 display:flex;
-flex-direction:row;`
+flex-direction:row;
+
+/* @media screen and (max-width: 780px){
+  width: 90%; */
+}`
 
 //image container----------------------------------------------
 const LeftContainer = styled.div`
