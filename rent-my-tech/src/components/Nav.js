@@ -89,6 +89,28 @@ a:hover {
   color:#df5f68;
 } 
 
+@media screen and (min-width: 780px) {
+width: 100vw;
+justify-content:space-between;
 
+h3 {
+  font-size: 1.7rem;
+  margin-left:-15rem;
+}
+
+.links {
+  width: 80%;
+}
+
+a {
+  padding: 5rem;
+  
+}
+.red-box {
+margin-right: 15rem;
+height: 4.8rem;
+}
+
+}
 
 `
