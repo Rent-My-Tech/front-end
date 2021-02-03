@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Link } from 'react-router-dom';
 import styled from 'styled-components'
 import RentForm from './RentForm';
@@ -6,7 +6,18 @@ import ItemsList from './ItemsList';
 
 
 export default function Dashboard(props) {
-    console.log(props.user.username)
+    // console.log(props.user.username)
+
+
+    //initial state for individual items
+    const initialState = {
+        itemName:"",
+        price: "",
+        description:""
+    }
+
+    const [item, setItem] = useState(initialState)
+
 
 
     return (
@@ -24,7 +35,7 @@ export default function Dashboard(props) {
             <div className="topDash">
                 <div className="statusBox">
                     <div className="userTypeBox">                         
-                        <p>Account Type: {props.user.userType}</p>
+                        <p><b>Account Type:</b> {props.user.userType}</p>
                     </div>
                     <div className="welcomeTextBox">                         
                         <p>Welcome, {props.user.username}!</p>
@@ -35,11 +46,11 @@ export default function Dashboard(props) {
                 </div>
             </div>
 
-            <div className="bottomDash">
+            {/* <div className="bottomDash">
                 <div className="itemsList">
                     <ItemsList />
                 </div>
-            </div>
+            </div> */}
         </Dash>
         
     </>   
@@ -113,14 +124,15 @@ const Dash= styled.div`
 
 .topDash{
 display:flex;
-flex-direction:row;
+flex-direction:column;
 justify-content:space-evenly;
+align-items:center;
 }
 
 .statusBox {
   background-color:#BC343D;
   color: white;
-  width:20vw;
+  width:30vw;
   display:flex;
   flex-direction:column-reverse;
   margin-top:0.5rem;
@@ -144,7 +156,7 @@ justify-content:space-evenly;
   .rentForm{
       background-color:#1B2E35;
       color: white;
-      width:60vw;
+      width:80vw;
       display:flex;
       flex-direction: column;
       align-items:center;
@@ -153,13 +165,11 @@ justify-content:space-evenly;
       border-radius:80px;
     }
 
-    .bottomDash{
+    /* .bottomDash{
         display:flex;
         flex-direction:column;
         align-items:center;
         }
-    
-    }
 
     .itemsList{
         display:flex;
@@ -170,9 +180,7 @@ justify-content:space-evenly;
         color:#BC343D;
         border-radius:80px;
         margin-top:1.0rem;
-     
-    
-    }
+    } */
 
 
 `

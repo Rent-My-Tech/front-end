@@ -9,15 +9,6 @@ export default function Login(props) {
 
   const history = useHistory();
 
-  //initialState
-  // const initialState = {
-  //   username:"",
-  //   password: "",
-  //   userType: ""
-  // };
-
-  // const [user, setUser] = useState(initialState);
-
    //onChange handler
    const handleChange = (e) => {
     props.setUser({...props.user, [e.target.name]: e.target.value})
@@ -33,7 +24,7 @@ export default function Login(props) {
     axios
         .post("https://reqres.in/api/users", props.user)
         .then(res => {
-          console.log(res.data)
+          // console.log(res.data)
           localStorage.setItem("token", res.data.payload);
           history.push('/dashboard')
         })
