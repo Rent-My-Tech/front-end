@@ -13,9 +13,11 @@ export default function Nav(props) {
          <h3>Rent My <span>Tech </span></h3> 
          
     <div className='links'>
+    <Link to="/about">About</Link>
     <Link to='/'>Home</Link> 
     <Link to='/signup'>Sign Up</Link> 
     <Link to='/login'>Login</Link>
+    <Link to="/contact">Contact</Link> 
     </div>
     
     </Navigation>
@@ -59,11 +61,11 @@ span {
 .links {
     background: #df5f68;
     height: 100%;
-    width: 60%;
+    width: 70%;
     display:flex;
     justify-content:center;
     align-items:center;
-    border-radius: 9rem 0 0 4rem;
+    border-radius: 5rem 0 0 5rem;
     
 }
 

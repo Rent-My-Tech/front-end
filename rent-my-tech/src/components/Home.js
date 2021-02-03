@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import styled from 'styled-components'
-
+import Nav from './Nav'
 
 
 
@@ -16,9 +16,12 @@ export default function Home(props) {
         <div className='red-box'></div>
          {/* <h3>Rent My <span>Tech </span></h3>  */}
          <div className='links'>
+    <Link to="/about">About</Link>
     <Link to='/'>Home</Link> 
     <Link to='/signup'>Sign Up</Link> 
     <Link to='/login'>Login</Link>
+    <Link to="/contact">Contact</Link> 
+
     </div>
     </Navigation>
 <TopContainer>

@@ -4,6 +4,7 @@ import Login from './components/Login';
 import Home from './components/Home';
 import SignUp from './components/SignUp';
 import About from './components/About';
+import Contact from './components/Contact';
 import Dashboard from './components/Dashboard';
 import PrivateRoute from './components/PrivateRoute'
 
@@ -39,6 +40,12 @@ const [newUser, setNewUser] = useState(signupState);
     <Route exact path="/">
       <Home />
     </Route>
+    {/* <Route path="/about">
+      <About />
+    </Route>
+    <Route path="/contact">
+      <Contact />
+    </Route> */}
     <Route path="/login">
       <Login user={user} setUser={setUser} />
     </Route>
