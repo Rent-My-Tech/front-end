@@ -11,6 +11,7 @@ const ItemsList = () => {
                 <p><b>Item Name:</b>Camera</p>
                 <p><b>Price:</b>$20.00</p>
                 <p><b>Description:</b><br/>Nikon DSLR Camera with 180mm Lense!</p>
+                <p>Test</p>
             </div>
         </>
     )
