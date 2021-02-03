@@ -118,7 +118,25 @@ a:hover {
   color:#df5f68;
 } 
 
+@media screen and (min-width: 780px) {
+width: 100vw;
+justify-content:space-between;
 
+
+.links {
+  width: 90%;
+}
+
+a {
+  padding: 5rem;
+  
+}
+.red-box {
+margin-right: 15rem;
+height: 4.8rem;
+}
+
+}
 
 `
 // Top Container--------------------------------------------------------
@@ -142,8 +160,6 @@ flex:1;`
 
 
 const RightContainer = styled.div`
-
-
 box-sizing:border-box;
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 font-family: 'Poppins', sans-serif;
@@ -207,9 +223,15 @@ span {
   transition: background-color 0.5s ease;
   }
 
-
 }
 
+@media screen and (min-width: 780px){
+    
+    .p-holder img {
+      height: 17rem;
+    }
+    
+  }
 `
 
 
