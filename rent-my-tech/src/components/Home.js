@@ -16,7 +16,8 @@ export default function Home(props) {
         <div className='red-box'></div>
          {/* <h3>Rent My <span>Tech </span></h3>  */}
          <div className='links'>
-    <Link to='/'>Home</Link> 
+    <Link to='/'>Home</Link>
+    <Link to='/about'>About</Link>  
     <Link to='/signup'>Sign Up</Link> 
     <Link to='/login'>Login</Link>
     </div>
@@ -70,7 +71,7 @@ h3 {
     @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
     font-family: 'Poppins', sans-serif;
   font-size:1.9rem;
-  margin-left: -30rem;
+  margin-left: -19rem;
   letter-spacing: 0.2rem;
 }
 span {
@@ -89,7 +90,7 @@ span {
 .links {
     background: #df5f68;
     height: 100%;
-    width: 60%;
+    width: 70%;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -172,15 +173,20 @@ span {
 
 .p-holder {
 
-  width: 50%;
+  width: 60%;
   margin-top: 2rem;
   font-size: 1.3rem;
   color: #EBEBEB;
   text-align:center;
   background: #1A2E35;
   padding: 1rem;
-  height: 30%;
-  border-radius: 4rem;
+  height: 34%;
+  border-radius: 7rem;
+
+  p {
+    margin-top:2.4rem;
+   font-weight:500;
+  }
 
 
   img {
