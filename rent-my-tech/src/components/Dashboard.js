@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import styled from 'styled-components'
+import RentForm from './RentForm';
+import ItemsList from './ItemsList';
 
 
 export default function Dashboard(props) {
@@ -17,9 +19,29 @@ export default function Dashboard(props) {
             <Link to='/'>Logout</Link> 
          </div>
         </Navigation>
-        <div className="welcomeText">                         
-            <h1>Welcome, {props.user.username}</h1>
-        </div>
+
+        <Dash>
+            <div className="topDash">
+                <div className="statusBox">
+                    <div className="userTypeBox">                         
+                        <p>Account Type: {props.user.userType}</p>
+                    </div>
+                    <div className="welcomeTextBox">                         
+                        <p>Welcome, {props.user.username}!</p>
+                    </div>
+                </div>
+                <div className="rentForm">
+                    <RentForm />
+                </div>
+            </div>
+
+            <div className="bottomDash">
+                <div className="itemsList">
+                    <ItemsList />
+                </div>
+            </div>
+        </Dash>
+        
     </>   
         
     )
@@ -85,10 +107,72 @@ a:hover {
   color:#df5f68;
 } 
 
-.welcomeText {
+`
 
+const Dash= styled.div`
+
+.topDash{
+display:flex;
+flex-direction:row;
+justify-content:space-evenly;
 }
 
+.statusBox {
+  background-color:#BC343D;
+  color: white;
+  width:20vw;
+  display:flex;
+  flex-direction:column-reverse;
+  margin-top:0.5rem;
+  margin-left:2rem;
+  border-radius:80px;
+
+  }
+
+  .welcomeTextBox{
+      margin-left: 2rem;
+      font-size:1.5rem;
+      font-weight:bolder;
+  }
+
+  .userTypeBox{
+    margin-left: 2rem;
+    font-size:1.2rem;
+    margin-top:0rem;
+  }
+
+  .rentForm{
+      background-color:#1B2E35;
+      color: white;
+      width:60vw;
+      display:flex;
+      flex-direction: column;
+      align-items:center;
+      margin-top:0.5rem;
+      margin-right:2rem;
+      border-radius:80px;
+    }
+
+    .bottomDash{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        }
+    
+    }
+
+    .itemsList{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        background-color:#FFCBCF;
+        width:80vw;
+        color:#BC343D;
+        border-radius:80px;
+        margin-top:1.0rem;
+     
+    
+    }
 
 
 `

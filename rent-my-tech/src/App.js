@@ -4,6 +4,7 @@ import Login from './components/Login';
 import Home from './components/Home';
 import SignUp from './components/SignUp';
 import Dashboard from './components/Dashboard';
+import PrivateRoute from './components/PrivateRoute'
 
 function App() {
 
@@ -11,7 +12,7 @@ function App() {
   const loginState = {
     username:"",
     password: "",
-    userType: ""
+    userType: "renter"
   };
 
   const [user, setUser] = useState(loginState);
@@ -43,9 +44,9 @@ const [newUser, setNewUser] = useState(signupState);
     <Route path="/signup">
       <SignUp newUser={newUser} setNewUser={setNewUser} />
     </Route>
-    <Route path="/Dashboard"> 
-      <Dashboard user={user} />
-    </Route>
+    <PrivateRoute exact path="/Dashboard"> 
+      <Dashboard user={user} component={Dashboard} />
+    </PrivateRoute>
   </Switch>
 </Router>
   

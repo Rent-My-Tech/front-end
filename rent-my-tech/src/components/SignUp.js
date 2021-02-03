@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { Link, useHistory } from 'react-router-dom';
 import Nav from './Nav'
@@ -34,8 +34,12 @@ const createAccount = (e) => {
       .post("https://reqres.in/api/users", props.newUser)
       .then(res => {
         console.log(res)
-        // localStorage.setItem("token", res.data.payload); NEED TO CONFIGURE THIS ONCE SERVER IS SETUP
-      })
+        localStorage.setItem("token", res.data.payload);
+          history.push('/login')
+        })
+        .catch(err => {
+          console.log(err)
+        })
 }
 
   return (
