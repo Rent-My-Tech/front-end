@@ -12,7 +12,7 @@ function App() {
   const loginState = {
     username:"",
     password: "",
-    userType: "renter"
+    userType: false
   };
 
   const [user, setUser] = useState(loginState);
@@ -25,7 +25,7 @@ const signupState = {
   lastName: "",
   email: "",
   password: "",
-  userType: ""
+  userType: false
 }
 
 const [newUser, setNewUser] = useState(signupState);

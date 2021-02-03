@@ -9,17 +9,7 @@ export default function Dashboard(props) {
     // console.log(props.user.username)
 
 
-    //initial state for individual items
-    const initialState = {
-        itemName:"",
-        price: "",
-        description:""
-    }
-
-    const [item, setItem] = useState(initialState)
-
-
-
+    
     return (
     <>
         <Navigation>
@@ -45,12 +35,6 @@ export default function Dashboard(props) {
                     <RentForm />
                 </div>
             </div>
-
-            {/* <div className="bottomDash">
-                <div className="itemsList">
-                    <ItemsList />
-                </div>
-            </div> */}
         </Dash>
         
     </>   

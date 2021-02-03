@@ -86,10 +86,10 @@ name='password'
 onChange={handleChange}
 value={props.newUser.password}
 />
-
+{/* //if userType === false{ renter } else { owner }  */}
 <div className='select'><select
 name='dropdown'>
-    <option name=''>select account type</option>
+    <option name=''>select account type</option> 
     <option name='renter'>Renter</option>
     <option name='owner'>Owner</option>
   </select></div>
