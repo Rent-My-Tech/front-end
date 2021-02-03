@@ -8,12 +8,17 @@ const RentForm = () => {
 
     return(
         <>
-        <h1>List your Tech!</h1>
+        <h1>Enter the items you want to list below:</h1>
+        
         <form>
-            <label for="itemName">Item Name:</label>
-            <input name="itemName" />
-            <input placeholder="Price:" />
-            <input placeholder="Description:" />
+           
+            <input placeholder="Item Name" />
+           
+            <input placeholder="Price" />
+
+            <input placeholder="Description" />
+
+            <button>List Item</button>
 
         </form>
         </>
