@@ -10,18 +10,6 @@ export default function SignUp(props) {
 
 const history = useHistory();
 
-//initialState
-
-// const initialState = {
-//   firstName: "",
-//   lastName: "",
-//   email: "",
-//   password: "",
-//   userType: ""
-// }
-
-// const [newUser, setNewUser] = useState(initialState);
-
 //onChange handler
 const handleChange = (e) => {
   props.setNewUser({...props.newUser, [e.target.name]: e.target.value})
