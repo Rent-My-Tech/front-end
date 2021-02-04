@@ -21,6 +21,7 @@ const RentForm = (props) => {
         };
 
     const handleSubmit = (e) => {
+        e.preventDefault()
         props.addItem(newItem)
     };  
 
