@@ -5,23 +5,23 @@ import { itemsList, reducer } from '../reducers/reducer';
 const RentForm = () => {
 
     //initial state for individual items
-    const initialState = {
-        itemName:"",
-        price: "",
-        description:""
-    }
+    // const initialState = {
+    //     itemName:"",
+    //     price: "",
+    //     description:""
+    // }
 
-        const [newItem, setNewItem] = useState(initialState);
-        const [state, dispatch] = useReducer(reducer, itemsList);
+    //     const [newItem, setNewItem] = useState(initialState);
+    //     const [state, dispatch] = useReducer(reducer, itemsList);
 
-        console.log(state) // contains itemsList
-        console.log(newItem) // contains initial state
-        console.log(reducer)
-        console.log(itemsList)
+        // console.log(state) // contains itemsList
+        // console.log(newItem) // contains initial state
+        // console.log(reducer)
+        // console.log(itemsList)
 
-        const handleChange = (e) => {
-            setNewItem({...state,[e.target.name]:e.target.value}) // is this updating newItem?
-        }
+        // const handleChange = (e) => {
+        //     setNewItem({...state,[e.target.name]:e.target.value}) // is this updating newItem?
+        // }
 
     return(
         <>
@@ -32,29 +32,29 @@ const RentForm = () => {
             placeholder="Item Name"
             type='text'
             name='itemName'
-            onChange={handleChange}
-            value={newItem.itemName}
+            // onChange={handleChange}
+            // value={newItem.itemName}
              />
            
             <input 
             placeholder="Price"
             type='number'
             name='price'
-            onChange={handleChange}
-            value={newItem.price} 
+            // onChange={handleChange}
+            // value={newItem.price} 
             />
 
             <input 
             placeholder="Description"
             type='text'
             name='description'
-            onChange={handleChange}
-            value={newItem.description} 
+            // onChange={handleChange}
+            // value={newItem.description} 
             />
 
-            <button onClick={() =>
+            {/* <button onClick={() =>
                 dispatch({type: 'ADD_ITEM', payload:newItem})
-            }>List Item</button>
+            }>List Item</button> */}
 
         </form>
             {/* {itemsList.map((item, index) => (

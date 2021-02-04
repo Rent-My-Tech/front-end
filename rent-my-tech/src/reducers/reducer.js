@@ -1,22 +1,8 @@
 
 export const itemsList = {
     isFetching: false,
-    rentalItems:[{
-                itemName:"Nintendo Switch",
-                price: "25.00",
-                description:"Includes Animal Crossing",
-                // active:false,
-            },
-            {
-                itemName:"Nikon 180",
-                price: "30.00",
-                description:"includes 30mm lens",
-            }],
-    newItem:{
-                itemName:"",
-                price: "",
-                description:""
-            },
+    rentalItems:[],
+    newItem:{},
     error:""
 }
 
@@ -59,7 +45,7 @@ export const reducer = (state, action) => {
         case ('ADD_ITEM_SUCCESS'):
             return ({
                 ...state,
-                rentalItems:[...state.rentalItems, action.payload],
+                rentalItems:[...state.rentalItems, action.payload], //newItem?
                 isFetching: false
             });
         case ('ADD_ITEM_FAIL'):
