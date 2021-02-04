@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
-import { fetchItem } from '../actions/actions';
+import { fetchItem, addItem } from '../actions/actions';
 
 const ItemsList = (props) => {
 console.log(props.rentalItems)
@@ -9,6 +9,10 @@ console.log(props.rentalItems)
 
 useEffect(() => {
     props.fetchItem() 
+},[]);
+
+useEffect(() => {
+    props.addItem() 
 },[]);
 
 
@@ -21,9 +25,9 @@ useEffect(() => {
                         <h1>ITEMS FOR RENT</h1> 
                     </div>
                     <div className="headItemBox">
-                        {props.rentalItems.length > 0 ? props.rentalItems.map((item, index) => (  
+                        {props.rentalItems.length > 0 ? props.rentalItems.map((newItem, index) => (  
                         <div className="itemBox">
-                            <p key={index}><b>Item Name:</b><br/>{item.name}</p> 
+                            <p key={index}><b>Item Name:</b><br/>{newItem.name}</p> 
                             <p key={index}><b>Price:</b><br/>$10.00</p>
                             <p key={index}><b>Description:</b><br/>It's a ball!</p>
                             <button>Delete</button>
@@ -42,14 +46,14 @@ useEffect(() => {
         return {
             isFetching: state.isFetching,
             rentalItems: state.rentalItems,
-            newItem:state.newItem, //not sure I need this here 
+            // newItem:state.newItem, 
             error: state.error
         }
     }
 
 
 
-export default connect(mapStateToProps, {fetchItem})(ItemsList)
+export default connect(mapStateToProps, {fetchItem,addItem})(ItemsList)
 
 
 const ItemBox = styled.div `
