@@ -18,7 +18,7 @@ export const itemsList = {
 
 // ]
 
-export const reducer = (state, action) => {
+export const reducer = (state = itemsList, action) => {
     switch(action.type) {
         case ('FETCH_ITEM_START'):
             return ({

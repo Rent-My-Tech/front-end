@@ -5,8 +5,23 @@ import Home from './components/Home';
 import SignUp from './components/SignUp';
 import Dashboard from './components/Dashboard';
 import PrivateRoute from './components/PrivateRoute'
+import axios from 'axios'
 
 function App() {
+
+ 
+  axios
+  .get('https://pokeapi.co/api/v2/item')
+  .then(res => {
+      console.log(res.data.results)
+  })
+  .catch(err => {
+    console.log(err)
+  })
+
+
+
+
 
   //login initialState
   const loginState = {

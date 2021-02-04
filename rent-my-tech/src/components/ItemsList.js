@@ -4,11 +4,11 @@ import { connect } from 'react-redux';
 import { fetchItem } from '../actions/actions';
 
 const ItemsList = (props) => {
-console.log(props)
+console.log(props.rentalItems)
 
 
 useEffect(() => {
-    props.fetchItem() // do I need props?
+    props.fetchItem() 
 },[]);
 
 
@@ -20,14 +20,16 @@ useEffect(() => {
                     <div className="itemBoxTitle">
                         <h1>ITEMS FOR RENT</h1> 
                     </div>
-                        {props.rentalItems.map((item, index) => (  
-                    <div className="itemBox">
-                        <p key={index}><b>Item Name:</b><br/>{item.itemName}</p>
-                        <p key={index}><b>Price:</b><br/>{item.price}</p>
-                        <p key={index}><b>Description:</b><br/>{item.description}</p>
-                        <button>Delete</button>
-                    </div>
-                     ))} 
+                    <div className="headItemBox">
+                        {props.rentalItems.length > 0 ? props.rentalItems.map((item, index) => (  
+                        <div className="itemBox">
+                            <p key={index}><b>Item Name:</b><br/>{item.name}</p> 
+                            <p key={index}><b>Price:</b><br/>$10.00</p>
+                            <p key={index}><b>Description:</b><br/>It's a ball!</p>
+                            <button>Delete</button>
+                        </div>
+                     )): null}
+                     </div> 
                 </div>
             </div>
             </ItemBox>
@@ -36,7 +38,7 @@ useEffect(() => {
 }
 
     const mapStateToProps = state => {
-        console.log(state)
+        // console.log(state)
         return {
             isFetching: state.isFetching,
             rentalItems: state.rentalItems,
@@ -70,8 +72,12 @@ align-items:center;
     margin-bottom:1.0rem;
 }
 
-.itemBoxTitle{
-
+.headItemBox{
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:center;
+    
 }
 
 .itemBox{
