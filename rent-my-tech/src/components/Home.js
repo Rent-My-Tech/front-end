@@ -15,20 +15,7 @@ export default function Home(props) {
       <Page >
         <Nav />
         
-         <div className='links'>
-    <Link to="/about">About</Link>
-    <Link to='/'>Home</Link> 
-
-    <div className='links'>
-    <Link to='/'>Home</Link>
-    <Link to='/about'>About</Link>  
-
-    <Link to='/signup'>Sign Up</Link> 
-    <Link to='/login'>Login</Link>
-    <Link to="/contact">Contact</Link> 
-
-    </div>
-    </Navigation> */}
+    
 <TopContainer>
 <LeftContainer>
   
