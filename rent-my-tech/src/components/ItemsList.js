@@ -4,16 +4,16 @@ import { connect } from 'react-redux';
 import { fetchItem, addItem } from '../actions/actions';
 
 const ItemsList = (props) => {
-console.log(props.rentalItems)
+console.log(props.newItem2)
 
 
 useEffect(() => {
     props.fetchItem() 
 },[]);
 
-useEffect(() => {
-    props.addItem() 
-},[]);
+// useEffect(() => {
+//     props.addItem() 
+// },[]);
 
 
     return(
@@ -27,9 +27,9 @@ useEffect(() => {
                     <div className="headItemBox">
                         {props.rentalItems.length > 0 ? props.rentalItems.map((newItem, index) => (  
                         <div className="itemBox">
-                            <p key={index}><b>Item Name:</b><br/>{newItem.name}</p> 
-                            <p key={index}><b>Price:</b><br/>$10.00</p>
-                            <p key={index}><b>Description:</b><br/>It's a ball!</p>
+                            <p key={index}><b>Item Name:</b><br/>{newItem.itemname}</p> 
+                            <p key={index}><b>Price:</b><br/>{newItem.itemcost}</p>
+                            <p key={index}><b>Description:</b><br/>{newItem.itemdescription}</p>
                             <button>Delete</button>
                         </div>
                      )): null}

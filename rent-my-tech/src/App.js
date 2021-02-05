@@ -11,9 +11,9 @@ function App() {
 
  
   axios
-  .get('https://pokeapi.co/api/v2/item')
+  .get('https://kayode94-rentmytech.herokuapp.com/items/items')
   .then(res => {
-      console.log(res.data.results)
+      console.log(res.data)
   })
   .catch(err => {
     console.log(err)

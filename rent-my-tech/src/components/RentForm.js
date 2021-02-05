@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ItemsList from './ItemsList';
 import { connect } from 'react-redux';
 import {addItem} from '../actions/actions';
@@ -8,10 +8,10 @@ import { v4 as uuid } from 'uuid';
 const RentForm = (props) => {
 
     const initialState = {
-        name:"",
-        price: "",
-        description:"",
-        id: uuid()
+        itemname:"",
+        itemcost: "",
+        itemdescription:"",
+        itemid: uuid()
     }
 
     const [newItem, setNewItem] = useState(initialState);
@@ -20,10 +20,20 @@ const RentForm = (props) => {
         setNewItem({...newItem,[e.target.name]:e.target.value})
         };
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
+    const handleSubmit = () => {
+        // e.preventDefault()
         props.addItem(newItem)
     };  
+
+//    useEffect(() => {
+//        const handleSubmit = () => {
+//         useEffect(() => {
+//             props.addItem(newItem)
+//         },[]);
+//        }
+
+
+       
 
     return(
         <>
@@ -33,35 +43,35 @@ const RentForm = (props) => {
             <input 
             placeholder="Item Name"
             type='text'
-            name='name'
-            id='name'
+            name='itemname'
+            id='itemname'
             onChange={handleChange}
-            value={newItem.name}
+            value={newItem.itemname}
              />
            
             <input 
             placeholder="Price"
             type='number'
-            name='price'
-            id='price'
+            name='itemcost'
+            id='itemcost'
             onChange={handleChange}
-            value={newItem.price}
+            value={newItem.itemcost}
             />
 
             <input 
             placeholder="Description"
             type='text'
-            name='description'
-            id='description'
+            name='itemdescription'
+            id='itemdescription'
             onChange={handleChange}
-            value={newItem.description}
+            value={newItem.itemdescription}
             />
 
             <button>List Item</button>
 
         </form>
 
-        <ItemsList />
+        <ItemsList newItem2={newItem} />
        
         </>
     )
