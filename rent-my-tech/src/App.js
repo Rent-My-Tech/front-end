@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Login from './components/Login';
 import Home from './components/Home';
 import SignUp from './components/SignUp';
+import About from './components/About';
+import Contact from './components/Contact';
 import Dashboard from './components/Dashboard';
 import PrivateRoute from './components/PrivateRoute'
 import axios from 'axios'
@@ -53,6 +55,8 @@ const [newUser, setNewUser] = useState(signupState);
     <Route exact path="/">
       <Home />
     </Route>
+    <Route path="/about" component={About} />
+    <Route path="/contact" component={Contact} />
     <Route path="/login">
       <Login user={user} setUser={setUser} />
     </Route>
