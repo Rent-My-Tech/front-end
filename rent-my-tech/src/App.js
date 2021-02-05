@@ -40,12 +40,8 @@ const [newUser, setNewUser] = useState(signupState);
     <Route exact path="/">
       <Home />
     </Route>
-    {/* <Route path="/about">
-      <About />
-    </Route>
-    <Route path="/contact">
-      <Contact />
-    </Route> */}
+    <Route path="/about" component={About} />
+    <Route path="/contact" component={Contact} />
     <Route path="/login">
       <Login user={user} setUser={setUser} />
     </Route>
