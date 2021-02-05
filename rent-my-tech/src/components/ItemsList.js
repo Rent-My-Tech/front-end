@@ -1,8 +1,19 @@
-import React from 'react';
-import styled from 'styled-components'
+import React, {useEffect} from 'react';
+import styled from 'styled-components';
+import { connect } from 'react-redux';
+import { fetchItem, addItem } from '../actions/actions';
 
-const ItemsList = () => {
+const ItemsList = (props) => {
+console.log(props.newItem2)
 
+
+useEffect(() => {
+    props.fetchItem() 
+},[]);
+
+// useEffect(() => {
+//     props.addItem() 
+// },[]);
 
 
     return(
@@ -10,19 +21,39 @@ const ItemsList = () => {
             <ItemBox>
             <div className="mainBox"> 
                 <div className="itemsList">
-                    <h1>ITEMS FOR RENT</h1>  
-                    <div className="itemBox">
-                        <p><b>Item Name:</b><br/>Camera</p>
-                        <p><b>Price:</b><br/>$20.00</p>
-                        <p><b>Description:</b><br/>Nikon DSLR!</p>
-                        <button>Delete</button>
+                    <div className="itemBoxTitle">
+                        <h1>ITEMS FOR RENT</h1> 
                     </div>
+                    <div className="headItemBox">
+                        {props.rentalItems.length > 0 ? props.rentalItems.map((newItem, index) => (  
+                        <div className="itemBox">
+                            <p key={index}><b>Item Name:</b><br/>{newItem.itemname}</p> 
+                            <p key={index}><b>Price:</b><br/>{newItem.itemcost}</p>
+                            <p key={index}><b>Description:</b><br/>{newItem.itemdescription}</p>
+                            <button>Delete</button>
+                        </div>
+                     )): null}
+                     </div> 
                 </div>
-            </div>    
+            </div>
             </ItemBox>
         </>
     )
 }
+
+    const mapStateToProps = state => {
+        // console.log(state)
+        return {
+            isFetching: state.isFetching,
+            rentalItems: state.rentalItems,
+            // newItem:state.newItem, 
+            error: state.error
+        }
+    }
+
+
+
+export default connect(mapStateToProps, {fetchItem,addItem})(ItemsList)
 
 
 const ItemBox = styled.div `
@@ -43,6 +74,14 @@ align-items:center;
     border-radius:80px;
     margin-top:1.0rem;
     margin-bottom:1.0rem;
+}
+
+.headItemBox{
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:center;
+    
 }
 
 .itemBox{
@@ -68,4 +107,3 @@ p{
 `
 
 
-export default ItemsList;

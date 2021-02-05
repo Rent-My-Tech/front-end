@@ -13,11 +13,18 @@ export default function Nav(props) {
          <h3>Rent My <span>Tech </span></h3> 
          
     <div className='links'>
+
     <Link to="/about">About</Link>
     <Link to='/'>Home</Link> 
     <Link to='/signup'>Sign Up</Link> 
     <Link to='/login'>Login</Link>
     <Link to="/contact">Contact</Link> 
+
+    <Link to='/'>Home</Link>
+    <Link to='/about'>About</Link> 
+    <Link to='/signup'>Sign Up</Link> 
+    <Link to='/login'>Login</Link>
+    
     </div>
     
     </Navigation>
@@ -42,7 +49,7 @@ h3 {
     @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
     font-family: 'Poppins', sans-serif;
   font-size:1.9rem;
-  margin-left: -30rem;
+  margin-left: -18rem;
   letter-spacing: 0.2rem;
 }
 span {
@@ -67,6 +74,7 @@ span {
     align-items:center;
     border-radius: 5rem 0 0 5rem;
     
+    
 }
 
 .links:hover {
@@ -89,6 +97,53 @@ a:hover {
   color:#df5f68;
 } 
 
+//Laptop-----------------
+@media (min-width: 1300px) {
+width: 100vw;
+.links {
+  width: 75%;
+  
+}
 
+a {
+  padding: 4rem;
+  font-size: 1.2rem;
+  
+  
+}
+.red-box {
+margin-right: 15rem;
+height: 4.8rem;
+}
+
+}
+
+//Desktop---------------------
+@media (min-width: 1900px) {
+ 
+
+.links {
+  width: 80%;
+}
+
+a{
+  padding: 5rem;
+  font-size: 1.8rem;
+}
+
+.red-box {
+  height: 6.3rem;
+}
+
+}
+//4k-------------------------------
+@media (min-width: 2400px) {
+ 
+ 
+ .red-box {
+   height: 8.3rem;
+ }
+ 
+ }
 
 `

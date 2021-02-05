@@ -7,14 +7,29 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Dashboard from './components/Dashboard';
 import PrivateRoute from './components/PrivateRoute'
+import axios from 'axios'
 
 function App() {
+
+ 
+  axios
+  .get('https://kayode94-rentmytech.herokuapp.com/items/items')
+  .then(res => {
+      console.log(res.data)
+  })
+  .catch(err => {
+    console.log(err)
+  })
+
+
+
+
 
   //login initialState
   const loginState = {
     username:"",
     password: "",
-    userType: "renter"
+    userType: false
   };
 
   const [user, setUser] = useState(loginState);
@@ -27,7 +42,7 @@ const signupState = {
   lastName: "",
   email: "",
   password: "",
-  userType: ""
+  userType: false
 }
 
 const [newUser, setNewUser] = useState(signupState);

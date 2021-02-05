@@ -6,24 +6,29 @@ import Nav from './Nav'
 
 
 
+
 export default function Home(props) {
 
 
 
     return (
       <Page >
-        <Navigation>
-        <div className='red-box'></div>
-         {/* <h3>Rent My <span>Tech </span></h3>  */}
+        <Nav />
+        
          <div className='links'>
     <Link to="/about">About</Link>
     <Link to='/'>Home</Link> 
+
+    <div className='links'>
+    <Link to='/'>Home</Link>
+    <Link to='/about'>About</Link>  
+
     <Link to='/signup'>Sign Up</Link> 
     <Link to='/login'>Login</Link>
     <Link to="/contact">Contact</Link> 
 
     </div>
-    </Navigation>
+    </Navigation> */}
 <TopContainer>
 <LeftContainer>
   
@@ -53,76 +58,25 @@ export default function Home(props) {
 
 const Page = styled.div `
   width:100vw;
-  height:100vh;`
+  height:100vh;
+  margin-top:1.76rem;
 
+  //Desktop---------------------
+@media (min-width: 1900px) {
+ 
+margin-top:2.38rem;
+ 
+ }
+ //4k-------------------------------
+ @media (min-width: 2400px) {
+  
+  margin-top:3rem;
 
-//NAV-----------------------------------------------
-
-const Navigation = styled.div`
-box-sizing:border-box;
-background: #385A64;
-color: #f3e8e8;
-width:100vw;
-height: 10%;
-margin-top:-0.7%; 
-display:flex;
-justify-content:space-between;
-align-items:center;
-
-h3 {
-    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-    font-family: 'Poppins', sans-serif;
-  font-size:1.9rem;
-  margin-left: -30rem;
-  letter-spacing: 0.2rem;
-}
-span {
- color: #df5f68;
- font-weight: bold;
- font-size:2rem;
-}
-
-.red-box {
-    height:6.3rem;
-    width:0.5%;
-    background:#df5f68;
-    
-}
-
-.links {
-    background: #df5f68;
-    height: 100%;
-    width: 60%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    border-radius: 9rem 0 0 4rem;
-    
-}
-
-.links:hover {
-    background: #1A2E35;
-    
-}
-
-a {
-    @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
-    font-family: 'Quicksand', sans-serif;
-  font-size:1.4rem;
-  margin-right:2rem;
-  text-decoration:none;
-  color: #f3e8e8;
-  letter-spacing: 0.2rem;
-  font-weight:normal;
-  padding: 7rem;
-}
-a:hover {
-  color:#df5f68;
-} 
+  }
+  `
 
 
 
-`
 // Top Container--------------------------------------------------------
 const TopContainer = styled.div`
 width: 100vw;
@@ -144,8 +98,6 @@ flex:1;`
 
 
 const RightContainer = styled.div`
-
-
 box-sizing:border-box;
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 font-family: 'Poppins', sans-serif;
@@ -175,15 +127,20 @@ span {
 
 .p-holder {
 
-  width: 50%;
+  width: 60%;
   margin-top: 2rem;
   font-size: 1.3rem;
   color: #EBEBEB;
   text-align:center;
   background: #1A2E35;
   padding: 1rem;
-  height: 30%;
-  border-radius: 4rem;
+  height: 34%;
+  border-radius: 7rem;
+
+  p {
+    margin-top:2.4rem;
+   font-weight:500;
+  }
 
 
   img {
@@ -204,9 +161,133 @@ span {
   transition: background-color 0.5s ease;
   }
 
-
 }
+//Laptops
+@media  (min-width: 1300px){
+    
+    .p-holder img {
+      height: 17rem;
+    }
+    
+  }
+//Desktop
+  @media (min-width: 1900px) {
 
+.p-holder{
+
+  p{
+    font-size:1.4rem;
+  }
+img{
+  height: 28rem;
+}
+}
+}
 `
 
 
+//NAV-----------------------------------------------
+
+// const Navigation = styled.div`
+// box-sizing:border-box;
+// background: #385A64;
+// color: #f3e8e8;
+// width:100vw;
+// height: 10%;
+// margin-top:-0.7%; 
+// display:flex;
+// justify-content:space-between;
+// align-items:center;
+
+// h3 {
+//     @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+//     font-family: 'Poppins', sans-serif;
+//   font-size:1.9rem;
+//   margin-left: -19rem;
+//   letter-spacing: 0.2rem;
+// }
+// span {
+//  color: #df5f68;
+//  font-weight: bold;
+//  font-size:2rem;
+// }
+
+// .red-box {
+//     height:6.3rem;
+//     width:0.5%;
+//     background:#df5f68;
+    
+// }
+
+// .links {
+//     background: #df5f68;
+//     height: 100%;
+//     width: 70%;
+//     display:flex;
+//     justify-content:center;
+//     align-items:center;
+//     border-radius: 9rem 0 0 4rem;
+    
+// }
+
+// .links:hover {
+//     background: #1A2E35;
+    
+// }
+
+// a {
+//     @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+//     font-family: 'Quicksand', sans-serif;
+//   font-size:1.4rem;
+//   margin-right:2rem;
+//   text-decoration:none;
+//   color: #f3e8e8;
+//   letter-spacing: 0.2rem;
+//   font-weight:normal;
+//   padding: 7rem;
+// }
+// a:hover {
+//   color:#df5f68;
+// } 
+
+// @media (min-width: 1300px) {
+// width: 100vw;
+
+
+
+
+// .links {
+//   width: 95%;
+// }
+
+// a {
+//   padding: 5rem;
+//   font-size: 1.2rem;
+  
+// }
+// .red-box {
+// margin-right: 15rem;
+// height: 4.8rem;
+// }
+
+// }
+
+// @media (min-width: 1900px) {
+ 
+
+// .links {
+//   width: 80%;
+// }
+
+// a{
+//   padding: 5rem;
+//   font-size: 1.8rem;
+// }
+
+// .red-box {
+//   height: 6.3rem;
+// }
+
+// }
+
+// `
