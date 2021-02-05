@@ -1,22 +1,12 @@
 import React from "react";
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import Nav from './Nav'
 
 export default function contact(){
   return(
     <Page >
-    <Navigation>
-    <div className='red-box'></div>
-     <h3>Rent My <span>Tech </span></h3> 
-     <div className='links'>
-<Link to="/about">About</Link>
-<Link to='/'>Home</Link> 
-<Link to='/signup'>Sign Up</Link> 
-<Link to='/login'>Login</Link>
-<Link to="/contact">Contact</Link> 
-
-</div>
-</Navigation>
+   <Nav />
  <TopContainer>
     <RightContainer>
 
@@ -80,6 +70,7 @@ export default function contact(){
   const Page = styled.div `
   width:100vw;
   height:100vh;
+  margin-top:2rem;
   background: url("https://i.ibb.co/FhF19Vv/2451377.jpg");
   background-repeat:   no-repeat;
   background-position: center center;  

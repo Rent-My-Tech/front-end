@@ -14,16 +14,13 @@ export default function Nav(props) {
          
     <div className='links'>
 
-    <Link to="/about">About</Link>
+    
     <Link to='/'>Home</Link> 
     <Link to='/signup'>Sign Up</Link> 
     <Link to='/login'>Login</Link>
+    <Link to="/about">About</Link>
     <Link to="/contact">Contact</Link> 
 
-    <Link to='/'>Home</Link>
-    <Link to='/about'>About</Link> 
-    <Link to='/signup'>Sign Up</Link> 
-    <Link to='/login'>Login</Link>
     
     </div>
     
